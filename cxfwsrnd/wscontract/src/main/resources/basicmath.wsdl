@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:bm="http://basicmath.sg.co/basicmath/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="basicmath"
+	targetNamespace="http://basicmath.sg.co/basicmath/" xmlns:bmt="http://basicmath.sg.co/basicmath/types/"
+	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/">
+	<!-- <wsdl:import namespace="http://basicmath.sg.co/basicmath-types" location="basicmath-types.xsd"> 
+		<wsdl:documentation>Types needed for basic math operations </wsdl:documentation> 
+		</wsdl:import> -->
+
+	<wsdl:types>
+		<xsd:schema>
+			<xsd:import schemaLocation="typs.xsd" namespace="http://basicmath.sg.co/basicmath/types/"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="inputParameterMessage">
+		<wsdl:part name="operand" type="bmt:MathOperands"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="operationResultMessage">
+		<wsdl:part name="result" type="bmt:OperationResult"></wsdl:part>
+	</wsdl:message>
+
+	<wsdl:portType name="dividePortType">
+		<wsdl:operation name="divideOperation">
+			<wsdl:input message="bm:inputParameterMessage"></wsdl:input>
+			<wsdl:output message="bm:operationResultMessage"></wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="mathOperationsBindingSOAP" type="bm:dividePortType">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="divideOperation">
+			<soap:operation soapAction="http://basicmath.sg.co/basicmath/divideOperation" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="DividePortTypeImplService">
+		<wsdl:port name="dividePortTypePort" binding="bm:mathOperationsBindingSOAP">
+			<soap:address location="http://www.example.org/" />
+		</wsdl:port>
+	</wsdl:service>
+	<!-- <wsdl:binding name="mathOperationsBindingHTTP" type="bm:dividePortType"> 
+		<http:binding verb="POST" /> <wsdl:operation name="divideOperation"> <http:operation 
+		location="/divideOperation" /> <wsdl:input> <mime:content type="application/x-www-form-urlencoded" 
+		/> </wsdl:input> <wsdl:output> <mime:content type="text/xml" /> </wsdl:output> 
+		</wsdl:operation> </wsdl:binding> <wsdl:service name="mathOperationsServiceHTTP"> 
+		<wsdl:port name="mathOperationPortHTTP" binding="bm:mathOperationsBindingHTTP"> 
+		<http:address location="http://www.example.org/"/> </wsdl:port> </wsdl:service> -->
+</wsdl:definitions>
