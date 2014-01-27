@@ -1,1 +1,2 @@
+#!/bin/sh
 mvn -U -f ../cxfwsrnd/pom.xml clean install
