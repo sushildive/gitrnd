@@ -10,7 +10,7 @@
 
 	<wsdl:types>
 		<xsd:schema>
-			<xsd:import schemaLocation="typs.xsd" namespace="http://basicmath.sg.co/basicmath/types/"/>
+			<xsd:import schemaLocation="./typs.xsd" namespace="http://basicmath.sg.co/basicmath/types/"/>
 		</xsd:schema>
 	</wsdl:types>
 	<wsdl:message name="inputParameterMessage">
