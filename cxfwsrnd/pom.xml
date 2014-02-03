@@ -30,12 +30,10 @@
     <module>ws-client</module>
   </modules>
 <build>
-		<pluginManagement>
-			<plugins>
+<plugins>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
-					<version>2.5.1</version>
 					<configuration>
 						<source>1.6</source>
 						<target>1.6</target>
@@ -43,6 +41,5 @@
 				</plugin>
 
 			</plugins>
-		</pluginManagement>
 	</build>
 </project>
