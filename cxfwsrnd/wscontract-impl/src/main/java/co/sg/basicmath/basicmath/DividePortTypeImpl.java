@@ -20,7 +20,7 @@ public class DividePortTypeImpl implements DividePortType {
 	public co.sg.basicmath.basicmath.types.OperationResult divideOperation(
 			@WebParam(partName = "operand", name = "operand", targetNamespace = "") co.sg.basicmath.basicmath.types.MathOperands operand) {
 		OperationResult result = new OperationResult();
-		result.setNumber1(2);
+		result.setNumber1(operand.getNumber1() / operand.getNumber2());
 		return result;
 	}
 

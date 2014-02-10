@@ -4,20 +4,17 @@
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="basicmath"
 	targetNamespace="http://basicmath.sg.co/basicmath/" xmlns:bmt="http://basicmath.sg.co/basicmath/types/"
 	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/">
-	<!-- <wsdl:import namespace="http://basicmath.sg.co/basicmath-types" location="basicmath-types.xsd"> 
-		<wsdl:documentation>Types needed for basic math operations </wsdl:documentation> 
-		</wsdl:import> -->
-
 	<wsdl:types>
 		<xsd:schema>
-			<xsd:import schemaLocation="./typs.xsd" namespace="http://basicmath.sg.co/basicmath/types/"/>
+			<xsd:import schemaLocation="./typs.xsd"
+				namespace="http://basicmath.sg.co/basicmath/types/" />
 		</xsd:schema>
 	</wsdl:types>
 	<wsdl:message name="inputParameterMessage">
-		<wsdl:part name="operand" type="bmt:MathOperands"></wsdl:part>
+		<wsdl:part name="operand" element="bmt:MathOperands"></wsdl:part>
 	</wsdl:message>
 	<wsdl:message name="operationResultMessage">
-		<wsdl:part name="result" type="bmt:OperationResult"></wsdl:part>
+		<wsdl:part name="result" element="bmt:OperationResult"></wsdl:part>
 	</wsdl:message>
 
 	<wsdl:portType name="dividePortType">
@@ -44,11 +41,4 @@
 			<soap:address location="http://www.example.org/" />
 		</wsdl:port>
 	</wsdl:service>
-	<!-- <wsdl:binding name="mathOperationsBindingHTTP" type="bm:dividePortType"> 
-		<http:binding verb="POST" /> <wsdl:operation name="divideOperation"> <http:operation 
-		location="/divideOperation" /> <wsdl:input> <mime:content type="application/x-www-form-urlencoded" 
-		/> </wsdl:input> <wsdl:output> <mime:content type="text/xml" /> </wsdl:output> 
-		</wsdl:operation> </wsdl:binding> <wsdl:service name="mathOperationsServiceHTTP"> 
-		<wsdl:port name="mathOperationPortHTTP" binding="bm:mathOperationsBindingHTTP"> 
-		<http:address location="http://www.example.org/"/> </wsdl:port> </wsdl:service> -->
 </wsdl:definitions>

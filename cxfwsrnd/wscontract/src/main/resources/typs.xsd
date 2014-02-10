@@ -19,16 +19,21 @@
 		</annotation>
 	</element>
 
-	<complexType name="MathOperands">
-		<sequence>
-			<element ref="bmt:number1"></element>
-			<element ref="bmt:number2"></element>
-		</sequence>
-	</complexType>
+	<element name="MathOperands">
+		<complexType>
+			<sequence>
+				<element ref="bmt:number1"></element>
+				<element ref="bmt:number2"></element>
+			</sequence>
+		</complexType>
+	</element>
 
-	<complexType name="OperationResult">
-		<sequence>
-			<element ref="bmt:number1"></element>
-		</sequence>
-	</complexType>
+	<element name="OperationResult">
+		<complexType>
+			<sequence>
+				<element ref="bmt:number1"></element>
+			</sequence>
+		</complexType>
+	</element>
+
 </schema>
