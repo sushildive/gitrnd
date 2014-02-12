@@ -75,5 +75,26 @@
 	</dependencies>
 	<build>
 		<finalName>wsapp</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.jboss.as.plugins</groupId>
+				<artifactId>jboss-as-maven-plugin</artifactId>
+				<version>7.1.0.CR1b</version>
+				<executions>
+					<execution>
+						<phase>install</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>    <!-- only remote server needs -->
+						<configuration>
+							<hostname>localhost</hostname>
+							<port>9999</port>
+							<username>admin</username>
+							<password>admin123x</password>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
 	</build>
 </project>

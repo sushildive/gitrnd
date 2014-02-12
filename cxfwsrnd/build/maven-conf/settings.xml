@@ -289,17 +289,8 @@ under the License.
       </pluginRepositories>
       <id>artifactory</id>
     </profile>
-
   </profiles>
 
-  <!-- activeProfiles
-   | List of profiles that are active for all builds.
-   |
-  <activeProfiles>
-    <activeProfile>alwaysActiveProfile</activeProfile>
-    <activeProfile>anotherAlwaysActiveProfile</activeProfile>
-  </activeProfiles>
-  -->
   <activeProfiles>
     <activeProfile>artifactory</activeProfile>
   </activeProfiles>
